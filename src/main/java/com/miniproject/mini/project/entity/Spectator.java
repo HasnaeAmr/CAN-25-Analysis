@@ -4,7 +4,8 @@ import com.miniproject.mini.project.enums.Nationality;
 import jakarta.persistence.*;
 
 @Entity
-public class spectator {
+@Table(name="spectator")
+public class Spectator {
 
     @Id
     Long id;
