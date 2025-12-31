@@ -134,30 +134,36 @@ public class BatchConfig {
         };
     }
 
-
     @Bean
-    public Job job(JobRepository jobRepository, Step jsonStep,
-                   Step xmlStep){
-        return new JobBuilder("import Spectators", jobRepository)
-                .start(jsonStep)
-                .next(xmlStep)
+    public Step xmlStep(JobRepository jobRepository) {
+
+        return new StepBuilder("xml-import-step", jobRepository)
+                .<SpectatorEntry, ProcessedSpectator>chunk(10)
+                .reader(xmlItemReader())
+                .processor(processor())
+                .writer(writer())
                 .build();
     }
 
-
-
     @Bean
-    public Step jsonStep(JobRepository jobRepository,
-                         PlatformTransactionManager transactionManager) {
+    public Step jsonStep(JobRepository jobRepository) {
 
         return new StepBuilder("json-import-step", jobRepository)
-                .<SpectatorEntry, SpectatorEntry>chunk(10, transactionManager)
+                .<SpectatorEntry, ProcessedSpectator>chunk(10)
                 .reader(jsonItemReader())
                 .processor(processor())
                 .writer(writer())
                 .build();
     }
 
+
+    @Bean
+    public Job job(JobRepository jobRepository, Step jsonStep, Step xmlStep){
+        return new JobBuilder("importSpectators", jobRepository)
+                .start(jsonStep)
+                .next(xmlStep)
+                .build();
+    }
 
 }
 
