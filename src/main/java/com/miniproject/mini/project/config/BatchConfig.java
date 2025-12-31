@@ -2,11 +2,14 @@ package com.miniproject.mini.project.config;
 
 import com.miniproject.mini.project.entity.Entries;
 import com.miniproject.mini.project.entity.Spectator;
+import com.miniproject.mini.project.entity.SpectatorStatistics;
 import com.miniproject.mini.project.enums.Nationality;
 import com.miniproject.mini.project.enums.TicketType;
 import com.miniproject.mini.project.model.SpectatorEntry;
 import com.miniproject.mini.project.repository.EntriesRepository;
+import com.miniproject.mini.project.repository.GeneralStatisticsRepository;
 import com.miniproject.mini.project.repository.SpectatorRepository;
+import com.miniproject.mini.project.repository.SpectatorStatisticsRepository;
 import org.springframework.batch.core.job.Job;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.repository.JobRepository;
@@ -35,6 +38,10 @@ public class BatchConfig {
     SpectatorRepository spectatorRepository;
     @Autowired
     EntriesRepository entriesRepository;
+    @Autowired
+    SpectatorStatisticsRepository spectatorStatisticsRepository;
+    @Autowired
+    GeneralStatisticsRepository generalStatisticsRepository;
 
     @Bean
     public JsonItemReader<SpectatorEntry> jsonItemReader(){
@@ -87,24 +94,32 @@ public class BatchConfig {
                     .build();
             entriesRepository.save(entry);
 
-            // calcul du nombre de matchs
+            String category="";
             int totalMatches = entriesRepository.countBySpectator(spectator)+1;
+            if(totalMatches==1)
+                category = "Première visite";
+            if(totalMatches==2 || totalMatches==3)
+                category = "Spectateur occasionnel";
+            if(totalMatches>=4 && totalMatches<=6)
+                category = "Spectateur régulier";
+            if(totalMatches>=6)
+                category = "Super fan";
 
+            int totalMatchsofCAN = entriesRepository.countTotalMatchs();
+            double loyality = (double) totalMatches / totalMatchsofCAN;
 
-            // classification
-            spectator.setBehaviorCategory(
-                    totalMatches > 10 ? "FIDEL" :
-                            totalMatches > 3  ? "REGULIER" : "OCCASIONNEL"
-            );
+            SpectatorStatistics spectatorStatistics = SpectatorStatistics.builder()
+                    .spectator(spectator)
+                    .matchs(totalMatches)
+                    .category(category)
+                    .loyalty(loyality)
+                    .economyTickets(entriesRepository.totalEconomyTicketsBySpectator(spectator))
+                    .premiumTickets(entriesRepository.totalPremiumTicketsBySpectator(spectator))
+                            .standardTickets(entriesRepository.totalStandardTicketsBySpectator(spectator))
+                                    .vipTickets(entriesRepository.totalVipTicketsBySpectator(spectator))
+                                            .build();
+            spectatorStatisticsRepository.save(spectatorStatistics);
 
-            // 3. Création Entry
-            Entries entry = new Entry();
-            entry.setMatchId(spectatorEntry.getMatchId());
-            entry.setEntryTime(spectatorEntry.getEntryTime());
-            entry.setGate(spectatorEntry.getGate());
-            entry.setSpectator(spectator);
-
-            // 4. Retour
             return new ProcessedSpectator(spectator, entry);
         };
     }
