@@ -4,9 +4,11 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Builder;
 
 @Entity
 @Table(name="spectator-statistics")
+@Builder
 public class SpectatorStatistics {
 
     @Id
@@ -32,5 +34,8 @@ public class SpectatorStatistics {
 
     @Column
     int economyTickets;
+
+    @Column
+    String classification;
 
 }
