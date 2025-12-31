@@ -17,6 +17,7 @@ import org.springframework.batch.core.step.Step;
 import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.infrastructure.item.ItemProcessor;
 import org.springframework.batch.infrastructure.item.ItemReader;
+import org.springframework.batch.infrastructure.item.ItemWriter;
 import org.springframework.batch.infrastructure.item.json.JacksonJsonObjectReader;
 import org.springframework.batch.infrastructure.item.json.JsonItemReader;
 import org.springframework.batch.infrastructure.item.json.builder.JsonItemReaderBuilder;
@@ -83,7 +84,6 @@ public class BatchConfig {
                             .age(spectatorEntry.getAge())
                                     .nationality(Nationality.valueOf(spectatorEntry.getNationality()))
                                             .build();
-            spectatorRepository.save(spectator);
 
             Entries entry = Entries.builder().spectator(spectator)
                     .matchId(spectatorEntry.getMatchId())
@@ -92,7 +92,6 @@ public class BatchConfig {
                     .ticketNumber(spectatorEntry.getTicketNumber())
                     .ticketType(TicketType.valueOf(spectatorEntry.getTicketType()))
                     .build();
-            entriesRepository.save(entry);
 
             String category="";
             int totalMatches = entriesRepository.countBySpectator(spectator)+1;
@@ -118,9 +117,20 @@ public class BatchConfig {
                             .standardTickets(entriesRepository.totalStandardTicketsBySpectator(spectator))
                                     .vipTickets(entriesRepository.totalVipTicketsBySpectator(spectator))
                                             .build();
-            spectatorStatisticsRepository.save(spectatorStatistics);
 
-            return new ProcessedSpectator(spectator, entry);
+            return new ProcessedSpectator(spectator, entry, spectatorStatistics);
+        };
+    }
+
+
+    @Bean
+    public ItemWriter<ProcessedSpectator> writer() {
+        return items -> {
+            for (ProcessedSpectator ps : items) {
+                spectatorRepository.save(ps.getSpectator());
+                entriesRepository.save(ps.getEntry());
+                spectatorStatisticsRepository.save(ps.getSpectatorStatistics());
+            }
         };
     }
 
