@@ -1,10 +1,9 @@
 package com.miniproject.mini.project.entity;
 
 import com.miniproject.mini.project.enums.TicketType;
+import com.miniproject.mini.project.model.SeatLocation;
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -14,6 +13,8 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Entries {
 
     @Id
@@ -21,7 +22,7 @@ public class Entries {
     Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "spectator_id")
     Spectator spectator;
 
     @Column
@@ -38,5 +39,14 @@ public class Entries {
 
     @Enumerated(EnumType.STRING)
     TicketType ticketType;
+
+    @Column
+    String tribune;
+    @Column
+    String bloc;
+    @Column
+    int rang;
+    @Column
+    int siege;
 
 }

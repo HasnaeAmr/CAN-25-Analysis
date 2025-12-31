@@ -1,7 +1,7 @@
 <spectators>
-    <spectator>
-        <spectatorId>SPX20201</spectatorId>
-        <matchId>MCH12</matchId>
+    <spectatorEntry>
+        <spectatorId>SPX2020</spectatorId>
+        <matchId>MCH10</matchId>
         <entryTime>2025-07-05T17:42:10</entryTime>
         <gate>Gate A1</gate>
         <ticketNumber>TK-55201-AGD</ticketNumber>
@@ -14,10 +14,11 @@
             <rang>1</rang>
             <siege>1</siege>
         </seatLocation>
-    </spectator>
-    <spectator>
-        <spectatorId>SPX20202</spectatorId>
-        <matchId>MCH12</matchId>
+    </spectatorEntry>
+
+    <spectatorEntry>
+        <spectatorId>SPX2021</spectatorId>
+        <matchId>MCH10</matchId>
         <entryTime>2025-07-05T17:43:05</entryTime>
         <gate>Gate A1</gate>
         <ticketNumber>TK-55202-AGD</ticketNumber>
@@ -30,10 +31,11 @@
             <rang>1</rang>
             <siege>2</siege>
         </seatLocation>
-    </spectator>
-    <spectator>
-        <spectatorId>SPX20203</spectatorId>
-        <matchId>MCH12</matchId>
+    </spectatorEntry>
+
+    <spectatorEntry>
+        <spectatorId>SPX2023</spectatorId>
+        <matchId>MCH04</matchId>
         <entryTime>2025-07-05T17:43:50</entryTime>
         <gate>Gate A2</gate>
         <ticketNumber>TK-55203-AGD</ticketNumber>
@@ -46,9 +48,10 @@
             <rang>2</rang>
             <siege>3</siege>
         </seatLocation>
-    </spectator>
-    <spectator>
-        <spectatorId>SPX20204</spectatorId>
+    </spectatorEntry>
+
+    <spectatorEntry>
+        <spectatorId>SPX2024</spectatorId>
         <matchId>MCH12</matchId>
         <entryTime>2025-07-05T17:44:12</entryTime>
         <gate>Gate A2</gate>
@@ -62,10 +65,11 @@
             <rang>2</rang>
             <siege>4</siege>
         </seatLocation>
-    </spectator>
-    <spectator>
-        <spectatorId>SPX20205</spectatorId>
-        <matchId>MCH12</matchId>
+    </spectatorEntry>
+
+    <spectatorEntry>
+        <spectatorId>SPX2025</spectatorId>
+        <matchId>MCH17</matchId>
         <entryTime>2025-07-05T17:44:55</entryTime>
         <gate>Gate A3</gate>
         <ticketNumber>TK-55205-AGD</ticketNumber>
@@ -78,10 +82,11 @@
             <rang>3</rang>
             <siege>5</siege>
         </seatLocation>
-    </spectator>
-    <spectator>
-        <spectatorId>SPX20206</spectatorId>
-        <matchId>MCH12</matchId>
+    </spectatorEntry>
+
+    <spectatorEntry>
+        <spectatorId>SPX2026</spectatorId>
+        <matchId>MCH15</matchId>
         <entryTime>2025-07-05T17:45:20</entryTime>
         <gate>Gate A3</gate>
         <ticketNumber>TK-55206-AGD</ticketNumber>
@@ -94,10 +99,11 @@
             <rang>3</rang>
             <siege>6</siege>
         </seatLocation>
-    </spectator>
-    <spectator>
-        <spectatorId>SPX20207</spectatorId>
-        <matchId>MCH12</matchId>
+    </spectatorEntry>
+
+    <spectatorEntry>
+        <spectatorId>SPX2027</spectatorId>
+        <matchId>MCH05</matchId>
         <entryTime>2025-07-05T17:46:05</entryTime>
         <gate>Gate B1</gate>
         <ticketNumber>TK-55207-AGD</ticketNumber>
@@ -110,10 +116,11 @@
             <rang>4</rang>
             <siege>7</siege>
         </seatLocation>
-    </spectator>
-    <spectator>
-        <spectatorId>SPX20208</spectatorId>
-        <matchId>MCH12</matchId>
+    </spectatorEntry>
+
+    <spectatorEntry>
+        <spectatorId>SPX2028</spectatorId>
+        <matchId>MCH04</matchId>
         <entryTime>2025-07-05T17:46:30</entryTime>
         <gate>Gate B1</gate>
         <ticketNumber>TK-55208-AGD</ticketNumber>
@@ -126,10 +133,11 @@
             <rang>4</rang>
             <siege>8</siege>
         </seatLocation>
-    </spectator>
-    <spectator>
-        <spectatorId>SPX20209</spectatorId>
-        <matchId>MCH12</matchId>
+    </spectatorEntry>
+
+    <spectatorEntry>
+        <spectatorId>SPX2029</spectatorId>
+        <matchId>MCH03</matchId>
         <entryTime>2025-07-05T17:47:10</entryTime>
         <gate>Gate B2</gate>
         <ticketNumber>TK-55209-AGD</ticketNumber>
@@ -142,10 +150,11 @@
             <rang>5</rang>
             <siege>9</siege>
         </seatLocation>
-    </spectator>
-    <spectator>
-        <spectatorId>SPX20210</spectatorId>
-        <matchId>MCH12</matchId>
+    </spectatorEntry>
+
+    <spectatorEntry>
+        <spectatorId>SPX2030</spectatorId>
+        <matchId>MCH10</matchId>
         <entryTime>2025-07-05T17:47:55</entryTime>
         <gate>Gate B2</gate>
         <ticketNumber>TK-55210-AGD</ticketNumber>
@@ -158,9 +167,10 @@
             <rang>5</rang>
             <siege>10</siege>
         </seatLocation>
-    </spectator>
-    <spectator>
-        <spectatorId>SPX20211</spectatorId>
+    </spectatorEntry>
+
+    <spectatorEntry>
+        <spectatorId>SPX2031</spectatorId>
         <matchId>MCH12</matchId>
         <entryTime>2025-07-05T17:48:25</entryTime>
         <gate>Gate B3</gate>
@@ -174,9 +184,10 @@
             <rang>6</rang>
             <siege>11</siege>
         </seatLocation>
-    </spectator>
-    <spectator>
-        <spectatorId>SPX20212</spectatorId>
+    </spectatorEntry>
+
+    <spectatorEntry>
+        <spectatorId>SPX2032</spectatorId>
         <matchId>MCH12</matchId>
         <entryTime>2025-07-05T17:49:00</entryTime>
         <gate>Gate B3</gate>
@@ -190,10 +201,11 @@
             <rang>6</rang>
             <siege>12</siege>
         </seatLocation>
-    </spectator>
-    <spectator>
-        <spectatorId>SPX20213</spectatorId>
-        <matchId>MCH12</matchId>
+    </spectatorEntry>
+
+    <spectatorEntry>
+        <spectatorId>SPX2033</spectatorId>
+        <matchId>MCH11</matchId>
         <entryTime>2025-07-05T17:49:35</entryTime>
         <gate>Gate C1</gate>
         <ticketNumber>TK-55213-AGD</ticketNumber>
@@ -206,10 +218,11 @@
             <rang>7</rang>
             <siege>13</siege>
         </seatLocation>
-    </spectator>
-    <spectator>
-        <spectatorId>SPX20214</spectatorId>
-        <matchId>MCH12</matchId>
+    </spectatorEntry>
+
+    <spectatorEntry>
+        <spectatorId>SPX2034</spectatorId>
+        <matchId>MCH20</matchId>
         <entryTime>2025-07-05T17:50:10</entryTime>
         <gate>Gate C1</gate>
         <ticketNumber>TK-55214-AGD</ticketNumber>
@@ -222,10 +235,11 @@
             <rang>7</rang>
             <siege>14</siege>
         </seatLocation>
-    </spectator>
-    <spectator>
-        <spectatorId>SPX20215</spectatorId>
-        <matchId>MCH12</matchId>
+    </spectatorEntry>
+
+    <spectatorEntry>
+        <spectatorId>SPX2035</spectatorId>
+        <matchId>MCH22</matchId>
         <entryTime>2025-07-05T17:50:45</entryTime>
         <gate>Gate C2</gate>
         <ticketNumber>TK-55215-AGD</ticketNumber>
@@ -238,5 +252,5 @@
             <rang>8</rang>
             <siege>15</siege>
         </seatLocation>
-    </spectator>
+    </spectatorEntry>
 </spectators>

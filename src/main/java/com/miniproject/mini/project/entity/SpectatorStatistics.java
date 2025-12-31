@@ -1,19 +1,23 @@
 package com.miniproject.mini.project.entity;
 
 import jakarta.persistence.*;
-import lombok.Builder;
+import lombok.*;
 
 @Entity
-@Table(name="spectator-statistics")
+@Table(name="spectator_statistics")
 @Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class SpectatorStatistics {
 
     @Id
+    @GeneratedValue
     Long id;
 
-    @Column
-    @OneToOne
-    Spectator spectator;
+    @OneToOne(mappedBy = "spectatorStatistics", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Spectator spectator;
 
     @Column
     double loyalty;

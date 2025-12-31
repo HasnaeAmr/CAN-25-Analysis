@@ -1,7 +1,7 @@
 [
   {
     "spectatorId": "SPX20201",
-    "matchId": "MCH12",
+    "matchId": "MCH10",
     "entryTime": "2025-07-05T17:42:10",
     "gate": "Gate A1",
     "ticketNumber": "TK-55201-AGD",
@@ -12,7 +12,7 @@
   },
   {
     "spectatorId": "SPX20202",
-    "matchId": "MCH12",
+    "matchId": "MCH10",
     "entryTime": "2025-07-05T17:43:05",
     "gate": "Gate A1",
     "ticketNumber": "TK-55202-AGD",
@@ -23,7 +23,7 @@
   },
   {
     "spectatorId": "SPX20203",
-    "matchId": "MCH12",
+    "matchId": "MCH04",
     "entryTime": "2025-07-05T17:43:50",
     "gate": "Gate A2",
     "ticketNumber": "TK-55203-AGD",
@@ -45,7 +45,7 @@
   },
   {
     "spectatorId": "SPX20205",
-    "matchId": "MCH12",
+    "matchId": "MCH17",
     "entryTime": "2025-07-05T17:44:55",
     "gate": "Gate A3",
     "ticketNumber": "TK-55205-AGD",
@@ -56,7 +56,7 @@
   },
   {
     "spectatorId": "SPX20206",
-    "matchId": "MCH12",
+    "matchId": "MCH15",
     "entryTime": "2025-07-05T17:45:20",
     "gate": "Gate A3",
     "ticketNumber": "TK-55206-AGD",
@@ -67,7 +67,7 @@
   },
   {
     "spectatorId": "SPX20207",
-    "matchId": "MCH12",
+    "matchId": "MCH05",
     "entryTime": "2025-07-05T17:46:05",
     "gate": "Gate B1",
     "ticketNumber": "TK-55207-AGD",
@@ -78,7 +78,7 @@
   },
   {
     "spectatorId": "SPX20208",
-    "matchId": "MCH12",
+    "matchId": "MCH04",
     "entryTime": "2025-07-05T17:46:30",
     "gate": "Gate B1",
     "ticketNumber": "TK-55208-AGD",
@@ -89,7 +89,7 @@
   },
   {
     "spectatorId": "SPX20209",
-    "matchId": "MCH12",
+    "matchId": "MCH03",
     "entryTime": "2025-07-05T17:47:10",
     "gate": "Gate B2",
     "ticketNumber": "TK-55209-AGD",
@@ -100,7 +100,7 @@
   },
   {
     "spectatorId": "SPX20210",
-    "matchId": "MCH12",
+    "matchId": "MCH10",
     "entryTime": "2025-07-05T17:47:55",
     "gate": "Gate B2",
     "ticketNumber": "TK-55210-AGD",
@@ -133,7 +133,7 @@
   },
   {
     "spectatorId": "SPX20213",
-    "matchId": "MCH12",
+    "matchId": "MCH11",
     "entryTime": "2025-07-05T17:49:35",
     "gate": "Gate C1",
     "ticketNumber": "TK-55213-AGD",
@@ -144,7 +144,7 @@
   },
   {
     "spectatorId": "SPX20214",
-    "matchId": "MCH12",
+    "matchId": "MCH20",
     "entryTime": "2025-07-05T17:50:10",
     "gate": "Gate C1",
     "ticketNumber": "TK-55214-AGD",
@@ -155,7 +155,7 @@
   },
   {
     "spectatorId": "SPX20215",
-    "matchId": "MCH12",
+    "matchId": "MCH22",
     "entryTime": "2025-07-05T17:50:45",
     "gate": "Gate C2",
     "ticketNumber": "TK-55215-AGD",

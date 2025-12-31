@@ -11,19 +11,40 @@ import org.springframework.stereotype.Repository;
 public interface EntriesRepository extends JpaRepository<Entries, Long> {
     int countBySpectator(Spectator spectator);
 
-    @Query("SELECT COUNT(DISTINCT e.matchId) FROM entries e")
+    @Query("SELECT COUNT(DISTINCT e.matchId) FROM Entries e")
     int countTotalMatchs();
 
-    @Query("SELECT SUM(e.vipTickets) FROM entries e WHERE e.spectator = :spectator")
+    @Query("""
+    SELECT COUNT(e)
+    FROM Entries e
+    WHERE e.spectator = :spectator
+      AND e.ticketType = VIP
+""")
     int totalVipTicketsBySpectator(@Param("spectator") Spectator spectator);
 
-    @Query("SELECT SUM(e.premiumTickets) FROM entries e WHERE e.spectator = :spectator")
+    @Query("""
+    SELECT COUNT(e)
+    FROM Entries e
+    WHERE e.spectator = :spectator
+      AND e.ticketType = PREMIUM
+""")
     int totalPremiumTicketsBySpectator(@Param("spectator") Spectator spectator);
 
-    @Query("SELECT SUM(e.standardTickets) FROM entries e WHERE e.spectator = :spectator")
+    @Query("""
+    SELECT COUNT(e)
+    FROM Entries e
+    WHERE e.spectator = :spectator
+      AND e.ticketType = STANDARD
+""")
     int totalStandardTicketsBySpectator(@Param("spectator") Spectator spectator);
 
-    @Query("SELECT SUM(e.economyTickets) FROM entries e WHERE e.spectator = :spectator")
+    @Query("""
+    SELECT COUNT(e)
+    FROM Entries e
+    WHERE e.spectator = :spectator
+      AND e.ticketType = ECONOMY
+""")
     int totalEconomyTicketsBySpectator(@Param("spectator") Spectator spectator);
+    boolean existsBySpectatorAndMatchId(Spectator spectator, String matchId);
 
 }

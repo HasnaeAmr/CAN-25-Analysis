@@ -2,9 +2,7 @@ package com.miniproject.mini.project.entity;
 
 import com.miniproject.mini.project.enums.Nationality;
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +12,8 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Spectator {
 
     @Id
@@ -22,10 +22,14 @@ public class Spectator {
     @Column
     int age;
 
-    @ManyToOne
+    @OneToMany(mappedBy = "spectator", cascade = CascadeType.ALL)
     List<Entries> entries = new ArrayList<>();
 
     @Enumerated(EnumType.STRING)
     Nationality nationality;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "statistics_id")
+    SpectatorStatistics spectatorStatistics;
 
 }
