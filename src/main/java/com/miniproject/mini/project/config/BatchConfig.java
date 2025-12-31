@@ -37,9 +37,6 @@ public class BatchConfig {
     EntriesRepository entriesRepository;
     @Autowired
     SpectatorStatisticsRepository spectatorStatisticsRepository;
-    @Autowired
-    GeneralStatisticsRepository generalStatisticsRepository;
-
     @Bean
     public JsonItemReader<SpectatorEntry> jsonItemReader(){
         return new JsonItemReaderBuilder<SpectatorEntry>()
